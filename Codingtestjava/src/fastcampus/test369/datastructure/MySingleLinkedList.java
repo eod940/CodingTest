@@ -15,15 +15,31 @@ public class MySingleLinkedList<T> {
     public void addNode(T data) {
         if (head == null) {
             head = new Node<>(data);
+        } else {
+            Node<T> node = this.head;
+            while (node.next != null) {
+                node = node.next;
+            }
+            node.next = new Node<>(data);
+        }
+    }
+
+    public void printAll() {
+        if (head != null) {
+            Node<T> node = this.head;
+            System.out.println(node.data);
+
+            while(node.next != null) {
+                node = node.next;
+                System.out.println(node.data);
+            }
         }
     }
 
     public static void main(String[] args) {
-//        Node<Integer> myNode1, myNode2;
-//        myNode1 = new Node<Integer>(1);
-//        myNode2 = new Node<Integer>(2);
-//        myNode1.next = myNode2;
+        MySingleLinkedList<Integer> mySingleLinkedList = new MySingleLinkedList<Integer>();
 
 
+        mySingleLinkedList.printAll();
     }
 }
