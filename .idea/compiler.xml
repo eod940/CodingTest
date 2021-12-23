@@ -3,6 +3,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CodingTest" options="--add-modules java.base" />
+      <module name="Part3" options="--add-modules java.base" />
     </option>
   </component>
 </project>

@@ -2,7 +2,8 @@ package fastcampus.part3;
 
 import java.util.Scanner;
 
-public class Main {
+// N과 M(3)
+public class Main15651 {
     static StringBuilder sb = new StringBuilder();
 
     private static void input() {
