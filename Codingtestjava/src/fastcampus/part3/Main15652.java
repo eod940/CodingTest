@@ -1,4 +1,4 @@
-package personal.boj;
+package fastcampus.part3;
 
 import java.util.Scanner;
 

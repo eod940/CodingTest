@@ -5,6 +5,13 @@ import java.util.Scanner;
 // 정답 제출시 public class Main{}으로 제출
 public class Main1002 {
 
+    /**
+     * 문제점
+     * 1. t에 2 이상의 값이 들어가면 출력 ❌
+     */
+
+    static StringBuilder sb = new StringBuilder();
+
     static void input() {
         Scanner sc = new Scanner(System.in);
         t = sc.nextInt();
@@ -17,8 +24,9 @@ public class Main1002 {
             x2 = sc.nextInt();
             y2 = sc.nextInt();
             r2 = sc.nextInt();
-        }
 
+            sb.append(contact()).append("\n");
+        }
     }
     static int t;
     static int x1, x2, y1, y2, r1, r2;
@@ -63,6 +71,7 @@ public class Main1002 {
     public static void main(String[] args) {
 
         input();
-        System.out.println(contact());
+
+        System.out.println(sb);
     }
 }

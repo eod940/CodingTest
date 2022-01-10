@@ -1,7 +1,8 @@
-package personal.boj;
+package fastcampus.part3;
 
 import java.util.Scanner;
 
+// N과 M()
 public class Main15650 {
     static StringBuilder sb = new StringBuilder();
 
