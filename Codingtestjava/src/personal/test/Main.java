@@ -1,5 +1,6 @@
 package personal.test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -26,31 +27,18 @@ public class Main {
     static int[] selected;
 
     static void input() {
-        Scanner scanner = new Scanner(System.in);
-        N = scanner.nextInt();
-        M = scanner.nextInt();
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
         selected = new int[M + 1];
     }
 
     static void rec_func(int k) {
-        if (k == M + 1) {
-            for (int i = 1; i <= M; i++) {
-                stringBuilder.append(selected[i]).append(' ');
-                stringBuilder.append('\n');
-            }
-        } else {
-            for (int candidate = 1; candidate <= M + 1; candidate++) {
-                selected[candidate] = candidate;
-            }
-            rec_func(k + 1);
-        }
+
     }
 
     public static void main(String[] args) {
 
-        input();
-        rec_func(1);
-        System.out.println(stringBuilder);
-    }
 
+    }
 }
