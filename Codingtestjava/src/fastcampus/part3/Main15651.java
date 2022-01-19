@@ -37,12 +37,18 @@ public class Main15651 {
      * Recurrence Func.
      * 만약 M개를 전부 골랐다면, 조건에 맞는 탐색 1번 성공
      * M개를 고르지 않았다면, k번째부터 M번째 까지 조건에 맞게 고르는 모든 방법을 시도한다.
+     *
+     * 나의 이해
+     * rec_func(int k)에서 k는 배열 selected[]의 자리수이다.
+     *
+     * 1. selected[k]에 들어갈 수 있는 수(cand)를 넣는다.
+     * 2. selected[k+1]에 들어갈 수 있는 수(cand)를 넣는다. ==>  rec_func(k+1)
+     * 3. 위 1~2의 과정이 반복되며 selected[M+1]까지 값을 넣어주면
      * */
     static void rec_func(int k) {
         // M + 1이 되면 k값을 다 찾은 것이므로
         if (k == M + 1) { // 다 골랐을 경우
             // selected[1...M] 배열이 새롭게 탐색된 경우
-            System.out.println("1. selected = " + Arrays.toString(selected));
             for (int i=1; i <= M; i++) {
                 sb.append(selected[i]).append(' ');
             }
@@ -50,9 +56,8 @@ public class Main15651 {
         } else {
             // 1~N 까지를 k번 원소로 한 번씩 정함.
             // 매번 k+1번부터 M번 원소로 출발
-            System.out.println("2. selected = " + Arrays.toString(selected));
-            for (int candidate = 1; candidate <= N; candidate++) {
-                selected[k] = candidate;
+            for (int cand = 1; cand <= N; cand++) {
+                selected[k] = cand;
                 // k+1 ~ M 을 모두 탐색
                 rec_func(k+1);
                 selected[k] = 0;
