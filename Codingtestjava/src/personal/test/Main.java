@@ -1,5 +1,6 @@
 package personal.test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -22,6 +23,7 @@ public class Main {
         N = sc.nextInt();
         M = sc.nextInt();
         selected = new int[M+1];
+        indicator = new int[N+1];
     }
 
     static StringBuilder sb = new StringBuilder();
@@ -35,12 +37,14 @@ public class Main {
             sb.append('\n');
         } else {
             for (int cand = 1; cand <= N; cand++) {
-
+                System.out.println("indicator = " + Arrays.toString(indicator));
+                if (indicator[cand] == 1)
+                    continue;
                 selected[k] = cand;
-                indicator[k] = 1;
+                indicator[cand] = 1;
                 rec_func(k + 1);
                 selected[k] = 0;
-                indicator[k] = 0;
+                indicator[cand] = 0;
             }
         }
     }
